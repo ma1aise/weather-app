@@ -24,6 +24,14 @@ li {
   list-style: none;
 }
 
+small {
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
 .weather-app {
   border: 1px solid green;
   padding: 15px;

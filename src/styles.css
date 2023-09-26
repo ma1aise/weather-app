@@ -73,3 +73,9 @@ a {
   line-height: 1;
   font-weight: 400;
 }
+
+.weather-temperature .active {
+  color: black;
+  cursor: default;
+  font-weight: bold;
+}

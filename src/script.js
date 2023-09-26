@@ -40,6 +40,12 @@ function displayWeather(response) {
   )} km/h`;
   document.querySelector("#cloud-coverage").innerHTML =
     response.data.weather[0].main;
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
 }
 
 //

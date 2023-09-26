@@ -15,67 +15,77 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <form class="search-form" id="search-form">
-          <div class="row">
-            <div class="col-6">
-              <input
-                type="search"
-                placeholder="Type a city..."
-                autofocus="on"
-                autocomplete="off"
-                id="city-input"
-                class="form-control shadow-sm"
-              />
-            </div>
-            <div class="col-3">
-              <input
-                type="submit"
-                value="Search"
-                class="form-control btn btn-success shadow-sm w-100"
-              />
-            </div>
-            <div class="col-3">
-              <button
-                class="btn btn-secondary w-100"
-                id="current-location-button"
-              >
-                Current
-              </button>
-            </div>
-          </div>
-        </form>
-        <h1 id="city"></h1>
-        <ul>
-          <li id="date"></li>
-          <li id="cloud-coverage"></li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <div class="clearfix">
-              <div class="float-left">
-                <span class="temperature" id="temperature"></span
-                ><span class="units">
-                  <a href="#" id="celsius-link">°C</a> |
-                  <a href="#" id="fahrenheit-link">°F</a>
-                </span>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <form class="search-form" id="search-form">
+            <div class="row">
+              <div class="col-6">
+                <input
+                  type="search"
+                  placeholder="Type a city..."
+                  autofocus="on"
+                  autocomplete="off"
+                  id="city-input"
+                  class="form-control shadow-sm"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="form-control btn btn-success shadow-sm w-100"
+                />
+              </div>
+              <div class="col-3">
+                <button
+                  class="btn btn-secondary w-100"
+                  id="current-location-button"
+                >
+                  Current
+                </button>
               </div>
             </div>
+          </form>
+          <h1 id="city"></h1>
+          <ul>
+            <li id="date"></li>
+            <li id="cloud-coverage"></li>
+          </ul>
+          <div class="row">
+            <div class="col-6">
+              <div class="d-flex weather-temperature">
+                <img
+                  src="https://previews.123rf.com/images/chudtsankov/chudtsankov1207/chudtsankov120700038/14510469-summer-hot-sun.jpg"
+                  alt="Clear"
+                  id="icon"
+                  class="float-left"
+                />
+                <div class="float-left">
+                  <strong id="temperature"></strong
+                  ><span class="units">
+                    <a href="#" id="celsius-link">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>N/A</li>
+                <li id="humidity"></li>
+                <li id="wind"></li>
+              </ul>
+            </div>
           </div>
-          <div class="col-6">
-            <ul>
-              <li>N/A</li>
-              <li id="humidity"></li>
-              <li id="wind"></li>
-            </ul>
-          </div>
+          <div class="weather-forecast" id="forecast"></div>
         </div>
+        <small>
+          <a href="https://github.com/ma1aise/test" target="_blank"
+            >Open-source code</a
+          >
+          by Lisa
+        </small>
       </div>
-      <small>
-        <a href="https://github.com/ma1aise/test" target="_blank"
-          >Open-source code</a
-        >, by Lisa
-      </small>
     </div>
     <script src="src/script.js"></script>
   </body>

@@ -22,11 +22,14 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+// Display the forecast for the week
+
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat", "Sun"];
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
@@ -47,6 +50,16 @@ function displayForecast() {
 
   forecastHTML + forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+// Get forecast for the week
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "63a6781d92e1973f3f34f96a94dff96e";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 // Display the Temperature, Humidity, Wind Speed and the Cloud Coverage
@@ -73,6 +86,7 @@ function displayWeather(response) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
+  getForecast(response.data.coord);
 }
 
 //
@@ -145,4 +159,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
 searchCity("Madrid");
-displayForecast();

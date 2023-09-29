@@ -91,6 +91,7 @@ function getForecast(coordinates) {
 // Display the Temperature, Humidity, Wind Speed and the Cloud Coverage
 
 function displayWeather(response) {
+  console.log(response);
   celsiusTemperature = response.data.main.temp;
 
   document.querySelector("#city").innerHTML = response.data.name;
